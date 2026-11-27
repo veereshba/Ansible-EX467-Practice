@@ -9,3 +9,9 @@
         path: /tmp/ansible_lab
         state: directory
         mode: '0755'
+
+ - name: Second attempt to create same directory
+      ansible.builtin.file:
+        path: /tmp/ansible_lab
+        state: directory
+        mode: '0755'
