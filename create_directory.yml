@@ -1,16 +1,16 @@
 ---
-- name: Create directory using Ansible
+- name: Test Ansible Idempotency
   hosts: linux_servers
   gather_facts: false
 
   tasks:
-    - name: Ensure directory exists
+    - name: First attempt to create directory
       ansible.builtin.file:
         path: /tmp/ansible_lab
         state: directory
         mode: '0755'
 
- - name: Second attempt to create same directory
+    - name: Second attempt to create same directory
       ansible.builtin.file:
         path: /tmp/ansible_lab
         state: directory
