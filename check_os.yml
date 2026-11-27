@@ -1,0 +1,13 @@
+---
+- name: Check Linux OS information
+  hosts: linux_servers
+  gather_facts: true
+
+  tasks:
+    - name: Display operating system
+      ansible.builtin.debug:
+        msg: "OS Distribution: {{ ansible_facts['distribution'] }}"
+
+    - name: Display kernel version
+      ansible.builtin.debug:
+        msg: "Kernel Version: {{ ansible_facts['kernel'] }}"
